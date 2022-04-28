@@ -9,7 +9,7 @@ export class Partidas{
     Id_partida: number;
     @Column('datetime')
     Tiempo_Conecta: Date;
-    @Column('datetime')
+    @Column({type: 'datetime', default: ()=> '(CURRENT_DATE)'})
     Tiempo_Desconecta: Date;
     @OneToMany(()=>PartidaNivel, (partida_nivel)=>partida_nivel.partidas)
     partida_nivel: PartidaNivel[];

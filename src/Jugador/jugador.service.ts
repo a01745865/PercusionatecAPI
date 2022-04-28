@@ -14,7 +14,6 @@ export class JugadorService {
     helloJugador(): string{
         return "Hola Jugador!";
     }
-
     showUsuario(usuario: string): string{
         return "Hola "+usuario;
     }
@@ -47,5 +46,13 @@ export class JugadorService {
                 fecha_nacimiento: fechaNaci}
             ])
             .execute();
+    }
+    inicioSesion(usuario: string, contrasena: string): Promise<Jugador>{
+        const respuesta = getRepository(Jugador)
+            .createQueryBuilder("jugador")
+            .select('jugador.id_usuario')
+            .where("jugador.id_usuario = :usuario AND jugador.contrasena = :contrasena", { usuario: usuario, contrasena: contrasena})
+            .getOneOrFail();
+        return respuesta;
     }
 }

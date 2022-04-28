@@ -26,7 +26,7 @@ import { PartidaNivelIntentoModule } from './PartidaNivelIntento/partida_nivel_i
       database: 'pruebaNEST',
       entities: [Jugador, Niveles, Partidas, PartidaNivel, PartidaNivelIntento],
       autoLoadEntities: true,
-      synchronize: true,
+      synchronize: false,
     }), JugadorModule, NivelesModule, PartidasModule, PartidaNivelModule, PartidaNivelIntentoModule,
   ],
   controllers: [AppController],

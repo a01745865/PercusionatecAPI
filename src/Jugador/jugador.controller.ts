@@ -15,6 +15,11 @@ export class JugadorController {
         var answer = this.Jugadorservice.buscarUsuario(usuario);
         return answer;
     }
+    @Get(':usuario/:contrasena')
+    async sayIniciarSesion(@Param('usuario') usuario, @Param('contrasena') contrasena){
+        var resultado = this.Jugadorservice.inicioSesion(usuario, contrasena);
+        return (await resultado).id_usuario;
+    }
     @Post()
     async RegistrarJugador(@Body() body) {
         const registro = this.Jugadorservice.registroJugador(body.usuario, body.nombre, body.ciudad, body.mail, body.contrasena, body.fechaNaci, body.nacionalidad);
