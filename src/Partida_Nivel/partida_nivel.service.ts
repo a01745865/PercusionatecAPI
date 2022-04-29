@@ -39,4 +39,12 @@ export class PartidaNivelService {
             .getOneOrFail();
         return respuesta;
     }
+    actualizarScore(id: number, puntaje: number){
+        const answer=getRepository(PartidaNivel)
+        .createQueryBuilder()
+        .update(PartidaNivel)
+        .set({puntaje: puntaje})
+        .where("id_partida_nivel = :id", { id: id })
+        .execute();
+    }
 }

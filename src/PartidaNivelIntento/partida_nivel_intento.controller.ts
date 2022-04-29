@@ -9,11 +9,11 @@ export class PartidaNivelIntentoController {
     sayHelloPartidaNivelIntento(): string {
         var answer = this.PartidaNivelIntentoservice.helloPartidaNivelIntento();
         return answer;
-    }    
+    } 
     @Post()
     sayInsertarIntento(@Body() body): String{
+        console.log("Ingresa a la funcion"); 
         var answer = this.PartidaNivelIntentoservice.insertarIntento(body.errores,body.inicio,body.final,body.idPartNivel);
         return "Se ingreso el intento";
     }
-
 }

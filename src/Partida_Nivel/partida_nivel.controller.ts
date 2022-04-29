@@ -1,4 +1,5 @@
 import { Body, Controller, Get, Param, Post } from "@nestjs/common";
+import { identity } from "rxjs";
 import { PartidaNivel } from "./partida_nivel.entity";
 import { PartidaNivelService } from './partida_nivel.service';
 
@@ -20,5 +21,10 @@ export class PartidaNivelController {
     sayIngresaPartidaNivel(@Body() body): string{
         var answer = this.PartidaNivelservice.ingresaPartidaNivel(body.partida, body.nivel, body.puntaje);
         return "Se ingresó";
+    }
+    @Post(':id')
+    sayActualizarScore(@Param('id') id, @Body() body){
+        var answer = this.PartidaNivelservice.actualizarScore(id, body.score);
+        return "Se actualizó";
     }
 }
