@@ -23,7 +23,7 @@ import { PartidaNivelIntentoModule } from './PartidaNivelIntento/partida_nivel_i
       port: 3306,
       username: 'root',
       password: '',
-      database: 'pruebaNEST',
+      database: 'percusionatec',
       entities: [Jugador, Niveles, Partidas, PartidaNivel, PartidaNivelIntento],
       autoLoadEntities: true,
       synchronize: false,
