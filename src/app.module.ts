@@ -19,10 +19,10 @@ import { PartidaNivelIntentoModule } from './PartidaNivelIntento/partida_nivel_i
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost', //DigitalOcean
+      host: '164.92.118.205', //DigitalOcean
       port: 3306,
-      username: 'root',
-      password: '',
+      username: 'team4',
+      password: 'admin',
       database: 'percusionatec',
       entities: [Jugador, Niveles, Partidas, PartidaNivel, PartidaNivelIntento],
       autoLoadEntities: true,
